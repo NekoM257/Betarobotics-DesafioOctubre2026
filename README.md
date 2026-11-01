@@ -47,27 +47,44 @@ Se termino de desarrollar la opción para introducir coordenadas manualmente des
 📁 Estructura del repositorio
 Betarobotics-DesafioOctubre2026/
 │
+
 ├── utils/
+
 │   ├── __init__.py
+
 │   ├── angle.py
+
 │   └── ... (otros archivos originales)
+
 │
+
 ├── waypoints/
+
 │   └── archivos .json
+
 │
+
 ├── move_to_pose.py
+
 ├── move_to_pose_2_robots.py
+
 ├── move_to_pose_points.py
+
 ├── requirements.txt
+
 ├── README.md
+
 └── LICENSE
 
 ⚙️ Instalación y ejecución
 Requisitos: Python 3, numpy, matplotlib y scipy.
 
 Instala las bibliotecas:
+
 python -m pip install numpy matplotlib scipy
+
 Clona el repositorio:
+
 git clone https://github.com/NekoM257/Betarobotics-DesafioOctubre2026.git
 
 Abre la terminal en esa carpeta de PythonRobotics y ejecuta la versión deseada:
@@ -87,13 +104,21 @@ Opción	Función
 Después, se elige 1 para Modo Carrera o 2 para Modo Rescate / Reabastecimiento.
 Formato de los archivos JSON
 Cada ruta es una lista de objetos, con las claves x, y y theta (orientación en radianes). Ejemplo de contenido para waypoints/mi_ruta.json:
+
 [
+
   {"x": 5.0, "y": 5.0, "theta": 0.0},
+  
   {"x": 15.0, "y": 5.0, "theta": 1.57},
+  
   {"x": 15.0, "y": 15.0, "theta": 3.14},
+  
   {"x": 5.0, "y": 15.0, "theta": -1.57},
+  
   {"x": 5.0, "y": 5.0, "theta": 0.0}
+
 ]
+
 En la opción 4, escribe solamente mi_ruta.json; el programa le antepone waypoints/ automáticamente. Conviene definir al menos dos puntos: el primero es el inicio y el resto son destinos.
 
 
@@ -108,6 +133,7 @@ La simulación también limita la velocidad lineal y angular. La orientación ob
 - Tiempo máximo: la versión con waypoints limita la simulación a 30 s simulados; un recorrido largo puede terminar antes de visitar todos los puntos.
 - Mensaje de finalización: actualmente se imprime «¡Recorrido completado con éxito!» incluso cuando el bucle termina por el límite de tiempo. Se podría distinguir entre recorrido terminado y tiempo agotado.
 - Validación de archivos: sería útil comprobar el formato de los JSON, el número de puntos y la presencia de x, y y theta antes de comenzar.
+- Optimizacion de Kps: se podria adcionar un algoritmo para que escoja los Kps para el camno mas rapido.
 
 📚 Aprendizajes del desafío
 El desarrollo permitió practicar lectura y documentación de código Python, control proporcional de movimiento, comparación de parámetros bajo condiciones equivalentes, representación de trayectorias con Matplotlib, manejo de listas de waypoints, interacción por consola y lectura de datos estructurados en JSON. También mostró la importancia de definir condiciones de llegada y límites de simulación coherentes con cada modo de operación.
@@ -115,9 +141,13 @@ Además, este es mi primer repositorio en GitHub y mi primera experiencia utiliz
 
 🎬 Demostración
 
-![move_to_pose_2_robots](/Betarobotics-DesafioOctubre2026/gifs/move_to_pose_2_robots.gif)
+![move_to_pose_2_robots](gifs/move_to_pose_2_robots.gif)
+
 Demostracion de move_to_pose_2_robots.py
-![move_to_pose_points](/Betarobotics-DesafioOctubre2026/gifs/move_to_pose_points.gif)
+
+
+![move_to_pose_points](gifs/move_to_pose_points.gif)
+
 Demostracion de move_to_pose_points.py
 
 🔗 Referencias y créditos
